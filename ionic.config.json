@@ -1,0 +1,7 @@
+{
+  "name": "oficina-virtual-front",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
