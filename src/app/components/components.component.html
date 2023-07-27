@@ -1,0 +1,98 @@
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button color="light" manu="first"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xl="2.5" class="ion-hide-sm-down">
+          <img src="../../assets/images/bancamia-logo-sin-endosar.png" height="35">
+        </ion-col>
+
+        <ion-col size-xs="3" class="ion-hide-lg-up ion-hide-md-up">
+          <img src="../../assets/images/bancamia-logo-sin-endosar.png">
+        </ion-col>
+
+        <ion-col size-xl="1.5" size-xs="3">
+          <span><b>{{titleHeader}}</b></span>
+        </ion-col>
+        <ion-col size-xl="3" class="ion-hide-sm-down img-header">
+
+        </ion-col>
+        <ion-col size-xl="2" size-xs="2">
+          <ion-icon name="notifications"></ion-icon>&nbsp;&nbsp;<span class="ion-hide-sm-down">Mis
+            mensajes</span>&nbsp;&nbsp;<ion-badge>4</ion-badge>
+        </ion-col>
+        <ion-col size-xl="2" size-xs="2" style="border-left: 1px solid white;">
+          <ion-icon name="person"></ion-icon>&nbsp;&nbsp;<span
+            class="ion-hide-sm-down">Usuario</span>&nbsp;&nbsp;<ion-icon style="cursor: pointer" id="popover-button"
+            name="chevron-down-outline"></ion-icon>
+
+          <ion-popover trigger="popover-button" [dismissOnSelect]="true">
+            <ng-template>
+              <ion-content>
+
+                <ion-list lines="none" *ngFor="let menu of menuUser" class="list-user">
+                  <ion-list-header>{{menu.title}}</ion-list-header>
+                  <ion-item *ngFor="let ope of menu.items" [button]="true" [detail]="false">
+                    <ion-icon color="primary" aria-hidden="true" slot="start" [ios]="ope.icon + '-outline'"
+                      [md]="ope.icon + '-sharp'"></ion-icon>
+                    <ion-label>{{ ope.title }}</ion-label>
+                  </ion-item>
+                </ion-list>
+
+              </ion-content>
+            </ng-template>
+          </ion-popover>
+
+        </ion-col>
+
+        <ion-col size-xl="1" size-xs="2" style="border-left: 1px solid white;">
+          <span class="ion-hide-sm-down">Salir</span>&nbsp;&nbsp;&nbsp;<ion-icon style="cursor: pointer"
+            routerLink="/login" name="log-out-outline" size="large"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay" side="start" menuId="first" swipeGesture="true">
+      <ion-content>
+
+        <div *ngFor="let menu of menus">
+          <ion-list id="inbox-list">
+            <ion-list-header>{{menu.title}}</ion-list-header>
+            <br>
+            <ion-menu-toggle auto-hide="false" *ngFor="let ope of menu.items; let i = index">
+              <ion-item routerDirection="root" [routerLink]="[ope.url]" lines="none" detail="false"
+                routerLinkActive="selected" (click)="selectedMenu(ope.title)">
+                <ion-icon aria-hidden="true" slot="start" [ios]="ope.icon + '-outline'"
+                  [md]="ope.icon + '-sharp'"></ion-icon>
+                <ion-label>{{ ope.title }}</ion-label>
+              </ion-item>
+              <ion-label *ngIf="ope.title === 'Llámanos'" class="label-phone">01 8000 126 100</ion-label>
+            </ion-menu-toggle>
+          </ion-list>
+        </div>
+
+        <ion-list id="inbox-list">
+          <ion-list-header>Acceso</ion-list-header>
+          <br>
+          <div style="padding-left: 5%; color: #73849a;">
+            <span>13/07/2023 - 9:10 pm</span><br><br>
+            <b>IP 172.0.0.1</b>
+          </div>
+        </ion-list>
+
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-content>

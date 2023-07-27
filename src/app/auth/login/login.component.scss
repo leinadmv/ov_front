@@ -1,0 +1,101 @@
+ion-grid.lg {
+    height: 100%;
+
+    ion-row {
+        height: 100%;
+    }
+}
+
+ion-col.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0% 8%;
+}
+
+ion-card-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+
+    img {
+        height: 100%;
+        width: 45%;
+    }
+}
+
+ion-card {
+    margin: 0px !important;
+    -webkit-box-shadow: 0px 0px 16px 2px rgba(166, 154, 166, 1);
+    -moz-box-shadow: 0px 0px 16px 2px rgba(166, 154, 166, 1);
+    box-shadow: 0px 0px 16px 2px rgba(166, 154, 166, 1);
+    background: linear-gradient(0deg, rgba(181, 18, 27, 1) 0%, rgba(247, 148, 29, 1) 90%);
+}
+
+ion-card-content {
+    text-align: center;
+    padding: 0 10%;
+}
+
+.img-login {
+    background-image: url(../../../assets/images/loginPortada.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.subtitle {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.content {
+    color: white;
+    font-size: 1rem !important;
+}
+
+ion-footer {
+    margin-top: auto;
+
+    ion-col {
+        text-align: center;
+        color: var(--ion-color-primary);
+        font-size: 0.8rem !important;
+    }
+}
+
+ion-list {
+    --ion-background-color: transparent;
+
+    ion-chip {
+        --background: white;
+        --color: #98999a;
+        width: 95%;
+    }
+
+    ion-chip.document {
+        --background: #f7941d;
+        --color: white;
+        width: 95%;
+    }
+
+}
+
+/* Media query para pantallas de menos de 500px */
+@media screen and (max-width: 500px) {
+    ion-col.login {
+        padding: 0% 0%;
+        display: inherit;
+    }
+
+    ion-card {
+        padding-top: 40%;
+    }
+
+    ion-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+}

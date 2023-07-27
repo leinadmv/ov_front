@@ -1,0 +1,84 @@
+<ion-content [fullscreen]="true">
+
+  <ion-grid class="ion-no-padding lg">
+    <ion-row>
+
+      <ion-col size-xl="7" class="ion-hide-sm-down img-login">
+
+      </ion-col>
+
+      <ion-col class="login" size-xl="5" size-xs="12">
+
+        <ion-card>
+
+          <ion-card-header>
+
+            <ion-card-title>
+              <img src="../../../assets/images/bancamia-logo-blanco.png">
+            </ion-card-title>
+            <br>
+            <ion-card-subtitle class="ion-align-self-center subtitle">
+              <span>¡Hola!</span>
+            </ion-card-subtitle>
+
+          </ion-card-header>
+
+          <ion-card-content>
+
+            <form [formGroup]="form">
+              <ion-list lines="none">
+
+                <ion-chip class="document">
+                  <ion-select placeholder="Seleccione su tipo de documento" formControlName="documentType">
+                    <ion-select-option value="CC">Cédula de ciudadanía</ion-select-option>
+                    <ion-select-option value="TI">Tarjeta de identidad</ion-select-option>
+                    <ion-select-option value="CE">Cédula de extranjería</ion-select-option>
+                  </ion-select>
+                </ion-chip>
+
+                <ion-chip>
+                  <ion-input placeholder="Número de documento" type="number"
+                    formControlName="documentNumber"></ion-input>
+                </ion-chip>
+
+                <ion-chip>
+                  <ion-input placeholder="Clave" type="password" formControlName="password"></ion-input>
+                  <ion-icon color="primary" name="chevron-forward-circle" (click)="redirectToPage()"></ion-icon>
+                </ion-chip>
+
+              </ion-list>
+            </form>
+
+            <br>
+            <span class="content">¿No tienes acceso? <b>Regístrate</b></span>
+
+          </ion-card-content>
+          <br>
+          <ion-footer class="ion-align-items-end">
+            <ion-toolbar>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="4">
+                    <ion-icon name="navigate-circle-sharp" aria-hidden="true" color="primary"></ion-icon> <span>
+                      Encuéntranos</span>
+                  </ion-col>
+                  <ion-col size="4" style="box-shadow: 5px 0 5px -5px rgba(128,128,128,0.5) inset;">
+                    <ion-icon name="key-sharp" aria-hidden="true" color="primary"></ion-icon> <span> ¿Olvidaste tu
+                      clave?</span>
+                  </ion-col>
+                  <ion-col size="4" style="box-shadow: 5px 0 5px -5px rgba(128,128,128,0.5) inset;">
+                    <ion-icon name="mail-sharp" aria-hidden="true" color="primary"></ion-icon> <span> Contáctanos</span>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-toolbar>
+          </ion-footer>
+
+        </ion-card>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,55 @@
+h1 {
+  font-weight: bold;
+}
+
+ion-chip {
+  border: 2px solid;
+  text-align: center;
+  font-size: 13px;
+}
+
+.ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  z-index: 1;
+  background-color: var(--ion-color-secondary);
+  color: white;
+  padding: 40px;
+  font-size: 5px;
+  width: 150px;
+  text-align: center;
+}
+
+.card-with-ribbon {
+  position: relative;
+}
+
+ion-card {
+  width: 100%;
+}
+
+ion-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.border {
+  ion-card-content {
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+  }
+}
+
+.amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
