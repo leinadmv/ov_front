@@ -11,6 +11,7 @@ import { ComponentsModule } from './components/components.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './core/services/interceptor/error.interceptor';
 import { LoaderInterceptor } from './core/services/interceptor/loader.interceptor';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,8 @@ import { LoaderInterceptor } from './core/services/interceptor/loader.intercepto
     IonicModule.forRoot(), 
     AppRoutingModule, 
     AuthModule, 
-    ComponentsModule],
+    ComponentsModule,
+    SharedModule],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {

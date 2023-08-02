@@ -127,6 +127,19 @@
 
       </ion-col>
 
+    </ion-row>
+
+    <ion-row>
+      <ion-text>
+        <h1>Tabla ejemplo</h1>
+      </ion-text>
+    </ion-row>
+
+    <ion-row>
+
+      <app-table style="height: 100%; width: 100%;" [cabecera]="cabecera" [data]="datos" [acciones]="acciones" (accionClick)="ejecutarAccion($event)"
+        (cargarMasData)="cargarMasDatos()">
+      </app-table>
 
     </ion-row>
 

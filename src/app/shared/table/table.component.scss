@@ -1,0 +1,38 @@
+/* Estilo de la tabla */
+.tabla-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo de la cabecera */
+  .tabla-header {
+    background-color: var(--ion-color-secondary); /* Cambiar por el color deseado */
+    color: white;
+    font-weight: bold;
+    border-bottom: 1px solid var(--ion-color-secondary-shade); /* Borde inferior para separar la cabecera del contenido */
+    border-radius: 8px 8px 0 0; /* La esquina superior izquierda y derecha tendrán un radio de 10px */
+    ion-row ion-col{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+  
+  /* Estilo de las filas de la tabla */
+  .tabla-row {
+    border-bottom: 1px solid var(--ion-color-primary-shade); /* Borde inferior para separar las filas */
+    transition: box-shadow 0.3s ease; /* Efecto de transición para el sombreado */
+    padding: 8px; /* Ajustar el espaciado interno según sea necesario */
+    ion-col{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+  
+  /* Efecto 3D en las filas de la tabla */
+  .tabla-row:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  

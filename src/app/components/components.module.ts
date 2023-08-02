@@ -6,6 +6,7 @@ import { ComponentsRoutingModule } from './components-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Prueba1Component } from './prueba1/prueba1.component';
 import { Prueba2Component } from './prueba2/prueba2.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { Prueba2Component } from './prueba2/prueba2.component';
     CommonModule,
     IonicModule.forRoot(),
     ComponentsRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   declarations: [
     ComponentsComponent, 

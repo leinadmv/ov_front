@@ -1,0 +1,42 @@
+
+  <div class="tabla-container">
+    <!-- Cabecera de la tabla -->
+    <ion-grid class="tabla-header">
+      <ion-row>
+        <ion-col *ngFor="let columna of cabecera">
+          {{ columna }}
+        </ion-col>
+        <ion-col *ngIf="acciones.length > 0">Acciones</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Datos de la tabla -->
+    <ion-grid>
+      <ion-row
+        *ngFor="let item of data"
+        class="tabla-row"
+        (click)="onRowClick(item)"
+      >
+        <ion-col *ngFor="let columna of cabecera">
+          {{ item[columna.toLowerCase()] }}
+        </ion-col>
+        <ion-col *ngIf="acciones.length > 0">
+          <ion-button
+            *ngFor="let accion of acciones"
+            (click)="ejecutarAccion(accion.evento, item)"
+          >
+            <ion-icon [name]="accion.icono"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Espacio para cargar más datos -->
+    <ion-infinite-scroll (ionInfinite)="cargarMas($event)" forceOverscroll="true" threshold="10px">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Cargando más datos..."
+      ></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+
