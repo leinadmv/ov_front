@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router, private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
+      NIT: ['', Validators.required],
       documentType: ['', Validators.required],
       documentNumber: ['', Validators.required],
       password: ['', Validators.required],
